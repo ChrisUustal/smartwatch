@@ -10,11 +10,11 @@ and logs it to an SD card. It can also connect to the internet to display real t
 internal stopwatch, calculates state of charge, sleeps, supports semi-hotswappable SD cards, 
 and manages its running tasks with a set of virtual timers. 
 ### What parts am I using? 
-ESP32 Feather by Adafruit
-OLED FeatherWing by Adafruit
-MicroSD Card Shield by Adafruit
-MPU6050 9DOF IMU w/ Temperature by ??? (idk, I found it in a bin)
-500mAh LiPoly Battery by Adafruit 
+- ESP32 Feather by Adafruit
+- OLED FeatherWing by Adafruit
+- MicroSD Card Shield by Adafruit
+- MPU6050 9DOF IMU w/ Temperature by ??? (idk, I found it in a bin)
+- 500mAh LiPoly Battery by Adafruit 
 ### Why am I making this? 
 I'm enrolled in a class, duh. I also find consumer tech and wearables really cool. 
 ### Can you use this? 
