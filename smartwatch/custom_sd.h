@@ -22,5 +22,6 @@ void sd_loop();
 void sd_event();
 void sd_card_info();
 void sd_check_file(bool on_restart);
+void sd_periodic_save();
 
 #endif

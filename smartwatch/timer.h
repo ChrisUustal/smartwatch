@@ -11,7 +11,7 @@ class Timer {
 //Timers
 //THIS NEEDS TO BE UPDATED WHEN YOU ADD MORE LOOPS
 //THERE'S ALSO ONE IN THE TIMER_SETUP FUNCTION
-const int num_timers = 7;
+const int num_timers = 8;
 const int loop_time_ms_arr[num_timers] = {
   10,       //button
   10,       //sd
@@ -19,7 +19,8 @@ const int loop_time_ms_arr[num_timers] = {
   100,      //stopwatch
   100,      //display
   1000,     //rtc
-  5000      //battery
+  5000,     //battery
+  10000     //sd periodic save
 };
 
 void (*function_ptr[num_timers])();

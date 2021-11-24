@@ -32,5 +32,6 @@ void timer_setup(){
   function_ptr[4] = display_loop;
   function_ptr[5] = rtc_loop;
   function_ptr[6] = battery_loop;
+  function_ptr[7] = sd_periodic_save;
   
 }

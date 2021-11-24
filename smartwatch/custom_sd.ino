@@ -108,6 +108,15 @@ void sd_loop(){
  
 }
 
+void sd_periodic_save(){
+
+  if(log_enable && sd_installed) {
+    log_file.close();
+    log_file = SD.open(DATA_FILE, FILE_APPEND);
+  }
+  
+}
+
 void sd_event(){
   if(sd_installed) {
     if(log_enable){
