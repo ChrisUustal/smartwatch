@@ -45,11 +45,7 @@ void display_loop(){
       stopwatch_display();
       break;
     case clock_state : 
-      if(wifi_connected && (rtc_fails < ALLOWED_RTC_FAILS)){
-        rtc_display();  
-      } else {
-        display0.println("Clock Fail");
-      }
+      rtc_display();
       break;
     case battery_state : 
       battery_display();
@@ -68,8 +64,8 @@ void display_loop(){
 
 //Display accelerometer magnitude and maximum
 void accel_display(){
-  display0.println("Accel:");
-  display0.printf("%4.1f (%4.1f)\r\n", acc, max_acc);
+  display0.println("Acc: m/s2");
+  display0.printf("%4.1f(%4.1f)\r\n", acc, max_acc);
 }
 
 void battery_display(){
@@ -81,20 +77,37 @@ void battery_display(){
 //Display temperature 
 void temp_display(){
   display0.println("Temp: ");
-  display0.print(temp_c, 1);
-  display0.println(" C");
+  switch (temp_unit){
+    case f:
+      display0.printf("%5.1f F\r\n", temp_c);
+      break;
+    case c:
+      display0.printf("%5.1f C\r\n", temp_c);
+      break;
+    default:
+      display0.printf("%5.1f C\r\n", temp_c);
+  }
 }
 
 //Display stopwatch interface
 void stopwatch_display(){
   display0.println("Stopwatch:");
-  display0.printf("%5.1f sec\r\n", stopwatch0.val);
+  if(stopwatch0.val < 60.0){
+    display0.printf("%8.1f s\r\n", stopwatch0.val);
+  } else {
+    display0.printf("%3d:%04.1f s\r\n", ((int)(stopwatch0.val))/60, fmod(stopwatch0.val, 60));
+  }
+  
 }
 
 //Display current time in the hr:min:sec format to screen
 void rtc_display(){
-  display0.println("Time:");
-  display0.printf("%02d:%02d:%02d\r\n", my_hour, my_minute, my_second);
+  if(wifi_connected && (rtc_fails < ALLOWED_RTC_FAILS)){
+    display0.println("Time:");
+    display0.printf("%02d:%02d:%02d\r\n", my_hour, my_minute, my_second);
+  } else {
+    display0.println("Clock Fail");
+  }
 }
 
 void log_display(){

@@ -11,6 +11,7 @@ void accel_setup() {
     acc_offset = 0.0;
     max_acc = 0.0;
     temp_c = 0.0;
+    temp_unit = c;
   
    if (!mpu.begin()) {
     #ifdef SERIAL_DEBUG
@@ -38,10 +39,40 @@ void accel_loop(){
   acc = acc_raw  - acc_offset;
 
   //Calculate temp
-  temp_c = temp.temperature;
+  switch (temp_unit) {
+    case c: 
+      temp_c = temp.temperature;
+      break;
+    case f:
+      temp_c = (temp.temperature*9/5)+32;
+      break;
+    default:
+      temp_c = temp.temperature; //default to C
+  }
 
   //Calculate max acceleration 
   if(acc > max_acc){
     max_acc = acc;
+  }
+}
+
+void accel_zero_event(){
+  acc_offset = acc_raw;
+}
+
+void accel_unzero_event(){
+  acc_offset = 0.0;
+}
+
+void temp_toggle_unit(){
+  switch (temp_unit){
+    case c :
+      temp_unit = f;
+      break;
+    case f :
+      temp_unit = c;
+      break;
+    default:
+      temp_unit = c;
   }
 }
