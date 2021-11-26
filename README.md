@@ -62,3 +62,11 @@ that is *not* prototype friendly at all. What I have right now works fine, but i
 to take this any further than I already have, then wait until after the global chip shortage, 
 design a custom debug-friendly PCB, and then you might have something people will
 actually want to look at. An 18mm thicc watch is *not* attractive. 
+## Non-Class Things:  
+#### Will I support this project? 
+No, don't assume I will. I might update it in the future, and if so, cool! But 
+I also might not, so don't hold your breath. 
+#### Can you use this? 
+Of course, everything is open source and you're free to use it for your own personal
+projects. If you use it to start a company or sell a product or something, cool--give 
+me a shoutout and shoot me a message so I can see what cool stuff you're making. 
