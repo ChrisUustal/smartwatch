@@ -1,7 +1,11 @@
 //settings.ino
 /* ~~~~~~~~~~ Reference Libraries ~~~~~~~~~~ */
 //Display Library
-#include <Adafruit_SSD1306.h>
+//#include <Adafruit_SSD1306.h>
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SH110X.h>
 
 /* ~~~~~~~~~~ Custom Libraries ~~~~~~~~~~ */
 #include "settings.h"

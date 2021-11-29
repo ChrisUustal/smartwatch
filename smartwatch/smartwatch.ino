@@ -2,7 +2,12 @@
 //Accelerometer Library
 #include <Adafruit_MPU6050.h>
 //Display Library
-#include <Adafruit_SSD1306.h>
+//128x32 lib
+//#include <Adafruit_SSD1306.h>
+//128x64 lib
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SH110X.h>
 //idk what this library does tbh 
 #include <Adafruit_Sensor.h>
 //Wifi Library

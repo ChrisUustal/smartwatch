@@ -1,7 +1,11 @@
 //display.ino
 /* ~~~~~~~~~~ Reference Libraries ~~~~~~~~~~ */
 //Display Library
-#include <Adafruit_SSD1306.h>
+//#include <Adafruit_SSD1306.h>
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SH110X.h>
 
 /* ~~~~~~~~~~ Custom Libraries ~~~~~~~~~~ */
 #include "display.h"
@@ -18,7 +22,8 @@ void display_setup() {
 
   text_size = DISPLAY_TEXT_MEDIUM;
   text_rotation = DISPLAY_LANDSCAPE;
-  
+
+  #ifdef DISPLAY_32
   display0 = Adafruit_SSD1306(128, 32, &Wire);
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if (!display0.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3C for 128x32
@@ -28,10 +33,22 @@ void display_setup() {
     for (;;)
       ; // Don't proceed, loop forever
   }
+  #endif
+
+  #ifdef DISPLAY_64
+    //display0 = Adafruit_SH1107(64, 128, &Wire);
+    display0.begin(0x3C, true);
+  #endif
+  
   display0.display();
   delay(500); // Pause for 1/2 second
   display0.setTextSize(text_size);
+  #ifdef DISPLAY_32
   display0.setTextColor(WHITE);
+  #endif
+  #ifdef DISPLAY_64
+  display0.setTextColor(SH110X_WHITE);
+  #endif
   display0.setRotation(text_rotation);
 }
 
@@ -80,6 +97,8 @@ void accel_display(){
   display0.println("Acc: m/s2");
   //display0.setTextSize(DISPLAY_TEXT_MEDIUM);
   display0.printf("%4.1f(%4.1f)\r\n", acc, max_acc);
+  display0.println("test1");
+  display0.println("test2");
 }
 
 void battery_display(){
