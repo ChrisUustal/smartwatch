@@ -16,6 +16,9 @@
 
 Adafruit_SSD1306 display0;
 
+int text_size;
+int text_rotation;
+
 void display_setup();
 void display_loop();
 

@@ -26,6 +26,7 @@
 #include "timer.h"
 #include "fsm.h"
 #include "button_handler.h"
+#include "settings.h"
 
 /* ~~~~~~~~~~ Defines ~~~~~~~~~~ */
 #define SERIAL_SPEED 115200
@@ -38,6 +39,7 @@ void setup() {
   
   sleep_setup();
   fsm_setup();
+  settings_setup();
   accel_setup();
   stopwatch_setup();
   display_setup();

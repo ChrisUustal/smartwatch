@@ -82,6 +82,9 @@ void short_c_press_handler() {
     case temp_state : 
       temp_toggle_unit();
       break;
+    case settings_state :
+      settings_scroll_event();
+      break;
     //default: 
   }
 }
@@ -90,6 +93,9 @@ void long_c_press_handler() {
   switch (display_fsm) {
     case acc_state : 
       accel_unzero_event();
+      break;
+    case settings_state :
+      settings_select_event();
       break;
     //default: 
   }

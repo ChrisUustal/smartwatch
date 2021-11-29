@@ -2,7 +2,7 @@
 #include "fsm.h"
 
 void fsm_setup(){
-display_fsm = acc_state;
+  display_fsm = acc_state;
 }
 
 void fsm_forward_event() {
@@ -24,6 +24,9 @@ void fsm_forward_event() {
       display_fsm = log_state;
       break;
     case log_state : 
+      display_fsm = settings_state;
+      break;
+    case settings_state :
       display_fsm = acc_state;
       break;
     default:
@@ -35,6 +38,9 @@ void fsm_forward_event() {
 void fsm_backward_event(){
   switch(display_fsm){
     case acc_state : 
+      display_fsm = settings_state;
+      break;
+    case settings_state : 
       display_fsm = log_state;
       break;
     case log_state : 
