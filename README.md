@@ -67,6 +67,6 @@ actually want to look at. An 18mm thicc watch is *not* attractive.
 No, don't assume I will. I might update it in the future, and if so, cool! But 
 I also might not, so don't hold your breath. 
 #### Can you use this? 
-Of course, everything is open source and you're free to use it for your own personal
-projects. If you use it to start a company or sell a product or something, cool--give 
-me a shoutout and shoot me a message so I can see what cool stuff you're making. 
+Of course, everything is open source and you're free to use it for your own personal non-commercial
+projects. If you want to use it to start a company or sell a product or something, shoot 
+me a message and I'm sure we can work something out. 
