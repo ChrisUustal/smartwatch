@@ -13,7 +13,7 @@ void sd_setup(){
   log_enable = LOG_ON_STARTUP;
 
   pinMode(CHIP_DETECT_PIN, INPUT_PULLUP);
-  //low = card installed 
+  //low = card installed
   sd_installed = digitalRead(CHIP_DETECT_PIN);
   sd_installed_prev = sd_installed;
 

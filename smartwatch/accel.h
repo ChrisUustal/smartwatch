@@ -6,6 +6,9 @@ enum TempUnit {f, c};
 TempUnit temp_unit;
 
 Adafruit_MPU6050 mpu;
+
+bool accel_present;
+
 float acc;
 float acc_raw;
 float acc_offset;

@@ -105,8 +105,7 @@ void battery_display(){
 //  display0.setTextSize(DISPLAY_TEXT_SMALL);
   display0.println("Bat%: ");
 //  display0.setTextSize(DISPLAY_TEXT_MEDIUM);
-  display0.print(battery_percentage);
-  display0.println("%");
+  display0.printf("%d%% (%4.2f)\r\n", battery_percentage, vbat);
 }
 
 //Display temperature 

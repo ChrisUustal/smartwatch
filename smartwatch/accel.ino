@@ -17,9 +17,12 @@ void accel_setup() {
     #ifdef SERIAL_DEBUG
     Serial.println("Sensor init failed");
     #endif
-    while (1)
-      yield();
-  }
+    accel_present = false;
+//    while (1)
+//      yield();
+    } else {
+      accel_present = true;
+    }
   #ifdef SERIAL_DEBUG
   Serial.println("Found a MPU-6050 sensor");
   #endif
@@ -27,45 +30,52 @@ void accel_setup() {
 
 //Poll accel values, then calculate magnitude and max
 void accel_loop(){
-  //Read Acceleration & Temp Sensor
-  sensors_event_t a, g, temp;
-  mpu.getEvent(&a, &g, &temp);
-
-  //Calculate Acceleration
-  acc_raw = sqrt(a.acceleration.x * a.acceleration.x + 
-  a.acceleration.y * a.acceleration.y + 
-  a.acceleration.z * a.acceleration.z);
-
-  acc = acc_raw  - acc_offset;
-
-  //Calculate temp
-  switch (temp_unit) {
-    case c: 
-      temp_c = temp.temperature;
-      break;
-    case f:
-      temp_c = (temp.temperature*9/5)+32;
-      break;
-    default:
-      temp_c = temp.temperature; //default to C
-  }
-
-  //Calculate max acceleration 
-  if(acc > max_acc){
-    max_acc = acc;
+  if(accel_present){
+    //Read Acceleration & Temp Sensor
+    sensors_event_t a, g, temp;
+    mpu.getEvent(&a, &g, &temp);
+  
+    //Calculate Acceleration
+    acc_raw = sqrt(a.acceleration.x * a.acceleration.x + 
+    a.acceleration.y * a.acceleration.y + 
+    a.acceleration.z * a.acceleration.z);
+  
+    acc = acc_raw  - acc_offset;
+  
+    //Calculate temp
+    switch (temp_unit) {
+      case c: 
+        temp_c = temp.temperature;
+        break;
+      case f:
+        temp_c = (temp.temperature*9/5)+32;
+        break;
+      default:
+        temp_c = temp.temperature; //default to C
+    }
+  
+    //Calculate max acceleration 
+    if(acc > max_acc){
+      max_acc = acc;
+    }
   }
 }
 
 void accel_zero_event(){
-  acc_offset = acc_raw;
+  if(accel_present){
+    acc_offset = acc_raw;
+  }
 }
 
 void accel_unzero_event(){
-  acc_offset = 0.0;
+  if(accel_present){
+    acc_offset = 0.0;
+  }
 }
 
 void temp_toggle_unit(){
-  switch (temp_unit){
+  if(accel_present){
+    switch (temp_unit){
     case c :
       temp_unit = f;
       break;
@@ -74,5 +84,6 @@ void temp_toggle_unit(){
       break;
     default:
       temp_unit = c;
+  }
   }
 }
