@@ -24,6 +24,8 @@ void sleep_event() {
     
     display0.clearDisplay();
     display0.setCursor(0, 0);
+    display0.setTextSize(text_size);
+    display0.setRotation(text_rotation);
     display0.print("Sleeping..");
     display0.display();
 
