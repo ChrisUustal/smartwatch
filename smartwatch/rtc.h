@@ -5,17 +5,19 @@
 //only use NU_WIFI or PERSONAL_WIFI
 //#define PERSONAL_WIFI
 #define NU_WIFI
+//#define HOTSPOT_WIFI
 //RTC
 #define ALLOWED_RTC_FAILS 1
 
-#ifdef PERSONAL_WIFI
+#if defined(PERSONAL_WIFI)
 const char* ssid       = "Not Skynet";
-const char* password   = "arnold198";
-#endif
-
-#ifdef NU_WIFI
+const char* password   = "arnold1984";
+#elif defined(NU_WIFI)
 const char* ssid       = "Device-Northwestern";
 const char* password   = "";
+#elif defined(HOTSPOT_WIFI)
+const char* ssid       = "Free Wiffi";
+const char* password   = "quietcurtain645";
 #endif  
 
 const char* ntpServer = "pool.ntp.org";

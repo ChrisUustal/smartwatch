@@ -24,11 +24,11 @@ void rtc_setup(){
   display0.print("Connecting to WiFi");
   display0.display();
 
-  #ifdef SERIAL_DEBUG
+  //#ifdef SERIAL_DEBUG
   Serial.println("MAC: ");
   Serial.println(WiFi.macAddress());
   Serial.printf("Connecting to %s ", ssid);
-  #endif
+  //#endif
   WiFi.begin(ssid, password);
   int wifi_attempt_counter = 0;
   while (WiFi.status() != WL_CONNECTED) {
