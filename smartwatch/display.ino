@@ -97,8 +97,8 @@ void accel_display(){
   display0.println("Acc: m/s2");
   //display0.setTextSize(DISPLAY_TEXT_MEDIUM);
   display0.printf("%4.1f(%4.1f)\r\n", acc, max_acc);
-  display0.println("test1");
-  display0.println("test2");
+  //display0.println("test1");
+  //display0.println("test2");
 }
 
 void battery_display(){
