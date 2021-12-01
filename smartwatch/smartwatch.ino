@@ -1,3 +1,10 @@
+/*********************************************
+* Project DataRacer: 
+* by Chris Uustal | Fall '21 | Northwestern U CE395 - Wearables & Embedded Computing
+* Free for non-commercial use
+* GitHub: https://github.com/ChrisUustal/smartwatch
+**********************************************/
+
 /* ~~~~~~~~~~ Reference Libraries ~~~~~~~~~~ */
 //Accelerometer Library
 #include <Adafruit_MPU6050.h>
