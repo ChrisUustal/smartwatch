@@ -29,12 +29,60 @@ projects ever could.
 ![image info](./images/dataracer_hw_block_diagram.png)
 #### What parts did I use? 
 - ESP32 Feather by Adafruit
-- OLED FeatherWing by Adafruit
+- OLED 128x64 FeatherWing by Adafruit
 - MicroSD Breakout Board by Adafruit
 - MPU6050 9DOF+Temp I2C Sensor (unknown vendor)
 - 500mAh LiPoly Battery by Adafruit
 #### Implementation
-This is gonna be long af since the software is hella complicated. 
+###### Hardware 
+The decision was made early on to use parts that were as easy as possible to get working 
+out of the box with as little tinkering as possible. Both Sparkfun and Adafruit have 
+fantastic development platforms for this, so I arbitrarily chose Adafruit, since they both
+appeared to have similar levels of hardware diversity. With that, I immediately began 
+moving forward with the Adafruit ESP32 Huzzah feather and OLED 128x32 FeatherWing as my 
+MCU and interface of choice. I've worked with the ESP32 previously and was quite happy 
+with its performance and feature set, so I saw no reason to reinvent the wheel. The only
+major downside of the ESP32 compared to alternative options is its high power draw, but
+since this design was for prototyping only, I wasn't as concerned about battery life so 
+long as it doesn't completely destroy the demo experience, which ended up being a good choice. 
+The OLED 128x32 FeatherWing (which I later upgraded to the 128x64 variant) offered interface
+buttons and a screen for displaying information to the user, so it checked all my interface 
+requirements in one package. Since all featherWings are intended to be stacking shields 
+directly on top of any feather MCU, I implemented it as such, directly stacking the display
+ontop of the MCU even in the final package. Conventionally the two components would be spaced 
+out by male headers on the OLED plugged into female headers from the ESP32, but this takes
+up a lot of vertical space within my packaging, something which was already at a premium 
+in the tiny form factor I was going for. As such, in the final build I actually soldered
+both the ESP32 and OLED directly to the same pair of male headers, allowing them to be stacked 
+together in a package nearly 0.25 inches shorter than with conventional stacking. The
+buttons integrated into the OLED directly map to GPIO ports on the ESP32, and the OLED 
+gets its display information over I2C. The OLED comes with a library and tutorial out of
+the box, so it was up and running in no time. 
+<br />
+For the battery, Adafruit offers a selection of LiPoly batteries that are capable
+of directly interfacing with and charging from the ESP32 feather, so I used the largest one
+from their series capable of fitting into the footprint I ended up deciding on, 500mAh. I
+originally worked with a 1200mAh battery, but this ended up being significantly larger than
+was reasonable for a wrist-mounted device. 
+<br />
+The MicroSD card breakout that I used was the only one Adafruit offered, so since I'd already
+had good luck on their other products, I simply continued using them as my vendor of choice. 
+It included 5v to 3.3v level shifting, so while that made the package a little larger, it
+also protected me in case I ended up wanting to use the breakout in another design later 
+on (which I didn't end up doing, but that's fine). It interfaced over SPI, which is expected
+for a MicroSD card, but it also offered some nice quality of life features like card detection
+and an indicator LED when it's being written to. 
+<br />
+The only actual sensor in the device, the MPU6050 9DOF+Temp sensor I just happened to
+have already in inventory, so I started testing with it originally just to have an example
+sensor without the intention of actually including it in the final product. It isn't from
+Adafruit and honestly I don't even know where I got it from, but it also operated off I2C 
+and worked easily enough that I didn't ever have to worry about it. It was even small enough 
+that it never presented any major packaging issues. 
+###### Software
+
+###### CAD 
+
 #### Pictures
 Still need to figure out how to add a picture lol
 #### Lessons Learned
