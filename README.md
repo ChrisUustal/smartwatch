@@ -23,14 +23,15 @@ we can find meaningful ways to improve the skills of our drivers based off this 
 then that could make bigger improvements to the performance of our vehicle than some 
 projects ever could. 
 ## Design: 
-#### Block Diagram
+#### Visual Story
+![image info](./images/dataracer_visual_story.png)
+#### Hardware Block Diagram
 ![image info](./images/dataracer_hw_block_diagram.png)
 #### What parts did I use? 
 - ESP32 Feather by Adafruit
 - OLED FeatherWing by Adafruit
 - MicroSD Breakout Board by Adafruit
-- MPU6050 9DOF+Temp Sensor by ??? (idk, I found it in a box)
-- Pulse Sensor by PulseSensor.com
+- MPU6050 9DOF+Temp I2C Sensor (unknown vendor)
 - 500mAh LiPoly Battery by Adafruit
 #### Implementation
 This is gonna be long af since the software is hella complicated. 
