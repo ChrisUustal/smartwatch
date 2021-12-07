@@ -24,7 +24,7 @@ then that could make bigger improvements to the performance of our vehicle than 
 projects ever could. 
 ## Design: 
 #### Block Diagram
-I need to figure out how to add a picture lol
+![image info](./images/dataracer_hw_block_diagram.png)
 #### What parts did I use? 
 - ESP32 Feather by Adafruit
 - OLED FeatherWing by Adafruit
