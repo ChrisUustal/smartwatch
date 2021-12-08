@@ -1,7 +1,7 @@
 # DataRacer
 ### A Wrist-Mounted Data Logger for Race Car Drivers
 ###### By Chris Uustal | Fall '21 | CE395 - Wearables & Embedded Computing
-## Executive Summary
+## Executive Summary:
 #### Motivation: Why am I doing this? 
 I'm taking a class (duh). But actually, I'm a member of the Formula SAE team here
 at Northwestern University, and we've spent years collecting data on our vehicle
@@ -226,7 +226,31 @@ standoffs that mate to the mounting holes on the display as well as the wall thi
 took a few tries, but eventually it got to the current design which works well enough. 
 #### Pictures
 It would be better suited to a video, but here are some pictures of it in action: 
-
+<br />
+Acceleration: 
+<br />
+![display accel](./images/dataracer_display_accel.png)
+<br />
+Temperature: 
+<br />
+![display temp](./images/dataracer_display_temp.png)
+<br />
+Stopwatch: 
+<br />
+![display stopwatch](./images/dataracer_display_stopwatch.png)
+<br />
+Battery Percentage: 
+<br />
+![display soc](./images/dataracer_display_soc.png)
+<br />
+Logging: 
+<br />
+![display log](./images/dataracer_display_log.png)
+<br />
+Settings: 
+<br />
+![display settings](./images/dataracer_display_settings.png)
+<br />
 #### Lessons Learned
 1. Once you've got a basic idea of the direction you want to go in, just start moving. 
 The easiest way to run out of time and kill a design is by not giving yourself
