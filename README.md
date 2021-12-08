@@ -215,7 +215,7 @@ a picture of the full CAD assembly without the lower housing (so you can see the
 <br />
 You can then compare that to the actual packaging I constructed: 
 <br />
-![image info](./images/dataracer_physical_packaging.png)
+![image info](./images/dataracer_physical_assembly.png)
 <br />
 There were a few challenges and unknowns with the housing that meant I got up to 4 iterations
 on the lower and 5 iterations on the upper, but they were fairly trivial to resolve with trial and
