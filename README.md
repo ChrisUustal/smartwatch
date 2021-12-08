@@ -203,9 +203,30 @@ The packaging quickly became clear once I'd finalized the components I was using
 few ways to put the components together geometrically that made any sense, so I just picked one 
 and started designing a housing. Because 3D printing is an easy way to iterate quickly on a design, 
 it was the clear choice for the housing. I tried both ABS and PLA, and the higher durability of PLA 
-made it a clearly better choice for my applications. 
+made it a clearly better choice for my applications. Since 3D printing generally doesn't like
+overhangs in the designs, I split then housing into two main parts called the lower and upper
+housing that then could be press fit together. It also has an opening for accessing the microUSB
+port and MicroSD card slot from within the housing beyond the obvious space for the display and button
+user interfaces. In the final iteration, I also added small handles on the sides so a band 
+could be attached to the device, allowing it to actually be mounted to one's wrist. Below is
+a picture of the full CAD assembly without the lower housing (so you can see the intended packaging):
+<br />
+![image info](./images/dataracer_cad_assembly.png)
+<br />
+You can then compare that to the actual packaging I constructed: 
+<br />
+![image info](./images/dataracer_physical_packaging.png)
+<br />
+There were a few challenges and unknowns with the housing that meant I got up to 4 iterations
+on the lower and 5 iterations on the upper, but they were fairly trivial to resolve with trial and
+error. For example, I originally made the inner dimensions of the housing the exact outer dimensions
+of the components, but plastic actually expands a little when you print it, so I had to increase my 
+inner dimensions by a tiny bit to fit the components comfortably. Similarly, getting elements like
+standoffs that mate to the mounting holes on the display as well as the wall thickness just right
+took a few tries, but eventually it got to the current design which works well enough. 
 #### Pictures
-Still need to figure out how to add a picture lol
+It would be better suited to a video, but here are some pictures of it in action: 
+
 #### Lessons Learned
 1. Once you've got a basic idea of the direction you want to go in, just start moving. 
 The easiest way to run out of time and kill a design is by not giving yourself
