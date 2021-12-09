@@ -3,7 +3,7 @@
 #define FSM_H
 
 enum display_fsm_enum {acc_state, temp_state, stopwatch_state, clock_state, battery_state, log_state, settings_state};
-enum settings_fsm_enum {setting1, setting2, setting3};
+enum settings_fsm_enum {setting1, setting2, setting3, setting4, setting5};
 
 //FSM (Finite State Machine) 
 display_fsm_enum display_fsm;

@@ -25,6 +25,12 @@ void settings_scroll_event(){
       settings_fsm = setting3;
       break;
     case setting3:
+      settings_fsm = setting4;
+      break;
+    case setting4:
+      settings_fsm = setting5;
+      break;
+    case setting5:
       settings_fsm = setting1;
       break;
     default:
@@ -77,7 +83,11 @@ void settings_display_adv(){
 
   print_setting_selector(setting3);
   
-  display0.printf("Setting 3: \r\n");
+  display0.printf("Coming Soon: X\r\n");
+  print_setting_selector(setting4);
+  display0.printf("Coming Soon: X\r\n");
+  print_setting_selector(setting5);
+  display0.printf("Coming Soon: X\r\n");
 }
 
 void print_setting_selector(settings_fsm_enum state){

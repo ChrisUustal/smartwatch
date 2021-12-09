@@ -3,8 +3,8 @@
 #define RTC_H
 
 //only use NU_WIFI or PERSONAL_WIFI
-//#define PERSONAL_WIFI
-#define NU_WIFI
+#define PERSONAL_WIFI
+//#define NU_WIFI
 //#define HOTSPOT_WIFI
 //RTC
 #define ALLOWED_RTC_FAILS 1
