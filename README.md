@@ -239,7 +239,7 @@ Stopwatch:
 <br />
 ![display stopwatch](./images/dataracer_display_stopwatch.png)
 Clock: 
-</br />
+<br />
 ![display clock](./images/dataracer_display_rtc.png)
 <br />
 Battery Percentage: 
