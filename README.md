@@ -238,6 +238,7 @@ Temperature:
 Stopwatch: 
 <br />
 ![display stopwatch](./images/dataracer_display_stopwatch.png)
+<br />
 Clock: 
 <br />
 ![display clock](./images/dataracer_display_rtc.png)
